@@ -1,0 +1,19 @@
+GET http://localhost:3000/maraz
+
+
+###
+POST http://localhost:3000/login
+content-type: application/json
+
+{
+    "username": "user",
+    "password": "shahabadmin"
+},
+
+{
+        "username": "user",
+    "password": "shahab1234"
+}
+
+###
+GET http://localhost:3000/zahremar/shahabi
