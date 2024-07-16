@@ -1,4 +1,4 @@
-interface User {
+export interface User {
   type: "user";
   vote: number;
   name: string;
@@ -6,21 +6,21 @@ interface User {
   password: string;
 }
 
-interface Admin {
+export interface Admin {
   type: 'admin';
   name: string;
   age: number;
   password: string;
 }
 
-interface Management {
-  type: 'management';
+export interface Leader {
+  type: 'Leader';
   name: string;
   age: number;
   password: string;
 }
 
-export type Person = Admin | User | Management;
+export type Person = Admin | User | Leader;
 
 class PersonManager {
   private persons: Person[];
@@ -32,32 +32,32 @@ class PersonManager {
       {
         type: "user",
         vote: 1,
-        name: "Alice",
+        name: "Ali",
         age: 28,
         password: "3134646"
       },
       {
         type: "admin",
-        name: "Bob",
+        name: "Hadi",
         age: 35,
         password: "84393146"
       },
       {
-        type: "management",
-        name: "Charlie",
+        type: "Leader",
+        name: "Maryam",
         age: 40,
         password: "65464646"
       },
       {
         type: "user",
         vote: 2,
-        name: "Diana",
+        name: "Hossein",
         age: 30,
         password: "78931225"
       },
       {
         type: "admin",
-        name: "Ethan",
+        name: "Erfan",
         age: 50,
         password: "363545994"
       }
@@ -74,6 +74,7 @@ class PersonManager {
       this.catsCount++;
       return "cats";
     }
+    return "empty";
   }
 
   public get(): { persons: (Omit<User, 'vote'> & { vote: string })[], dogsCount: number, catsCount: number } {
@@ -101,13 +102,19 @@ class PersonManager {
   public add(person: Person): void {
     this.persons.push(person);
   }
+
+  public findUserByNameAndPassword(name: string, password: string): Person | null {
+    return this.persons.find(person => person.name === name && person.password === password) || null;
+  }
 }
+
+export default PersonManager;
 
 const personManager = new PersonManager();
 const newUser: User = {
   type: "user",
   vote: 1,
-  name: "Frank",
+  name: "Faranak",
   age: 25,
   password: "65465466646"
 };

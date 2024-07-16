@@ -1,19 +1,29 @@
-GET http://localhost:3000/maraz
+GET http://localhost:3000/persons
 
 
 ###
-POST http://localhost:3000/login
-content-type: application/json
+POST http://localhost:3000/add-person
+Content-type: application/json
 
 {
-    "username": "user",
-    "password": "shahabadmin"
-},
-
-{
-        "username": "user",
-    "password": "shahab1234"
+  "type": "user",
+  "vote": 1,
+  "name": "Faranak",
+  "age": 25,
+  "password": "65465466646"
 }
+
+
+###
+
+POST http://localhost:3000/login
+Content-type: application/json
+
+{
+    "name": "shahab",
+    "password":"135966"
+}
+
 
 ###
 GET http://localhost:3000/zahremar/shahabi
