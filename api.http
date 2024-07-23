@@ -1,0 +1,49 @@
+GET http://localhost:3000/expenses/paid-by/1
+
+
+###
+POST http://localhost:3000/add-person
+Content-type: application/json
+
+{
+  "type": "user",
+  "vote": 1,
+  "name": "Faranak",
+  "age": 25,
+  "password": "65465466646"
+}
+
+
+###
+
+POST http://localhost:3000/expenses
+Content-type: application/json
+
+{
+    "description": "Dinner",
+    "amount": 50,
+    "paidById": "2",
+    "groupId": "1",
+    "date": "2024-07-18T12:00:00Z"
+}
+
+
+###
+
+POST http://localhost:3000/expenses
+Content-type: application/json
+
+{
+    "description": "Dinner",
+    "amount": 50,
+    "paidById": "2",
+    "groupId": "3",
+    "date": "2024-07-18T12:00:00Z"
+}
+
+###
+GET http://localhost:3000/expenses/paid-by/2
+
+###
+GET http://localhost:3000/expenses/for-user/2
+
