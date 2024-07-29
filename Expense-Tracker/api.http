@@ -2,6 +2,17 @@ GET http://localhost:3000/expenses/paid-by/1
 
 
 ###
+GET http://localhost:3000/static
+
+###
+GET http://localhost:3000/staticJSON
+
+
+###
+GET http://localhost:3000/echo
+
+
+###
 POST http://localhost:3000/add-person
 Content-type: application/json
 
